@@ -198,3 +198,24 @@ FROM
     Students
 WHERE
     Email = 'alice@univ.edu'; 
+
+-- VIEWS
+CREATE VIEW Student_Info AS 
+SELECT StudentID, FirstName, MealPlanID, FinancialAidStatus
+FROM Students;
+
+CREATE VIEW Student_Count AS
+SELECT COUNT(*)
+FROM Students;
+
+-- STORED ROUTINE
+CREATE PROCEDURE AddNewStudent (
+	IN S_ID int,
+    IN S_FName VARCHAR(20),
+    IN S_Email VARCHAR(100),
+    IN S_FinancialAidStatus BOOLEAN,
+    IN S_MealPlanID INT	
+)
+INSERT INTO Students (StudentID, FirstName, Email, FinancialAidStatus, MealPlan)
+values(S_ID, S_FName, S_Email, S_FinancialAidStatus, S_MealPlanID);
+
