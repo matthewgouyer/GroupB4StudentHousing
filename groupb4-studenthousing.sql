@@ -216,6 +216,6 @@ CREATE PROCEDURE AddNewStudent (
     IN S_FinancialAidStatus BOOLEAN,
     IN S_MealPlanID INT	
 )
-INSERT INTO Students (StudentID, FirstName, Email, FinancialAidStatus, MealPlan)
+INSERT INTO Students (StudentID, FirstName, Email, FinancialAidStatus, MealPlanID)
 values(S_ID, S_FName, S_Email, S_FinancialAidStatus, S_MealPlanID);
 
