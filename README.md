@@ -1,45 +1,15 @@
-CS-157A: Group B4 Student Housing Database Application
+# CS-157A Group B4: Student Housing Database Application
 
-1. Prerequisites
+## Setup & Run
+**Database:** Run `groupb4-studenthousing.sql` in MySQL Workbench to create the schema and sample data. **Application:** Copy `app.properties.template` to `src/main/resources/app.properties` and fill in your MySQL credentials. Then run `MainApp.java` (requires JDK 21, Maven, and MySQL Connector/J 8.0.33 which is included in `pom.xml`).
 
-MySQL Server & MySQL Workbench
+## How It Was Built
+We created an `app.properties` file to store JDBC connection info (URL, user, password) and built `DBConnector.java` to load the MySQL driver and establish connections. `MainApp.java` provides a console menu using Scanner for input and PreparedStatements for all SQL operations (SELECT, INSERT, UPDATE, DELETE) on Students, Rooms, and MaintenanceTickets tables. A transactional workflow demonstrates COMMIT and ROLLBACK when assigning students to rooms. See video demo for screenshots of the application in action.
 
-
-JDK 21.0.1 (build 21.0.1+12): 
-Builds & Download links:
-
-Windows 64-bit: [Download Link](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_windows-x64_bin.zip)
-
-Mac/AArch64 64-bit: [Download Link](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-aarch64_bin.tar.gz)
-
-Mac/x64 64-bit: [Download Link](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-x64_bin.tar.gz)
-
-Linux/AArch64 64-bit: [Download Link](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_linux-aarch64_bin.tar.gz)
-
-Linux/x64 64-bit: [Download Link](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_linux-x64_bin.tar.gz)
-
-Maven
-
-MySQL Connector/J: Included as a dependency in pom.xml.
-
-2. Database Setup
-
-Open MySQL Workbench.
-
-RUN SQL script.
-
-Execute the entire script against your local MySQL server. This creates the schema and populates it with test data.
-
-3. Application Setup 
-
-Locate the template file in the project root: app.properties.template.
-
-Copy this file and paste it into the src/main/resources directory.
-
-Rename the copy in the src/main/resources directory to app.properties.
-
-Enter Your Credentials (url should not need to be changed)
-
-4. Run App
-
-So far you can just test the connection. 
+## Downloads
+- [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+- [JDK 21 - Windows x64](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_windows-x64_bin.zip)
+- [JDK 21 - Mac AArch64](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-aarch64_bin.tar.gz)
+- [JDK 21 - Mac x64](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_macos-x64_bin.tar.gz)
+- [JDK 21 - Linux x64](https://download.java.net/java/GA/jdk21.0.1/415e3f918a1f4062a0074a2794853d0d/12/GPL/openjdk-21.0.1_linux-x64_bin.tar.gz)
